@@ -7,13 +7,18 @@ import { fontSize, spacing } from "../constants/dimentions";
 import SongCard from "../components/SongCard";
 import SongCardWithCategory from "../components/SongCardWithCategory";
 import FloatingPlayer from "../components/FloatingPlayer";
+import { songsWithCategory } from "../components/Data/SongsWithCategory";
 
 const HomeScreen = () => {
   return (
     <View style={styles.container}>
-        <Header />
-        <FlatList data={[1,2,3,4,5,6,7]} renderItem={SongCardWithCategory} contentContainerStyle={{ paddingBottom: 400}}/>
-        <FloatingPlayer />
+      <Header />
+      <FlatList
+        data={songsWithCategory}
+        renderItem={SongCardWithCategory}
+        contentContainerStyle={{ paddingBottom: 400 }}
+      />
+      <FloatingPlayer />
     </View>
   );
 };
@@ -28,6 +33,6 @@ const styles = StyleSheet.create({
   headingText: {
     fontSize: fontSize.lg,
     color: colors.textPrimary,
-    fontFamily: fontfamilies.bold
-  }
+    fontFamily: fontfamilies.bold,
+  },
 });

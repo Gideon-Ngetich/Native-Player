@@ -6,12 +6,12 @@ import { fontSize } from "../constants/dimentions";
 import { colors } from "../constants/colors";
 import { fontfamilies } from "../constants/fonsts";
 
-const SongCardWithCategory = () => {
+const SongCardWithCategory = ({item}) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.headingText}>Recommended for you</Text>
+      <Text style={styles.headingText}>{item.title}</Text>
       <FlatList
-        data={[1, 2, 3, 4, 5]}
+        data={item.songs}
         renderItem={SongCard}
         horizontal={true}
         ItemSeparatorComponent={<View style={{ marginHorizontal: 1 }} />}
